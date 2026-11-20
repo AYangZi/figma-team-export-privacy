@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据与隐私 · Figma 团队导出</title>
+<style>html{color-scheme:light}body{margin:0;background:#f4f7f5;color:#1f3029;font:16px/1.75 system-ui,sans-serif}main{max-width:720px;margin:0 auto;padding:42px 24px 70px}h1{font-size:32px}h2{margin-top:30px;font-size:20px}p{margin:8px 0}.date{color:#53655c}code{overflow-wrap:anywhere}</style></head>
+<body><main><h1>Figma 团队导出隐私政策</h1><p class="date">更新于 2026 年 11 月 20 日 · 适用于 1.5.1 测试版</p>
+<p>这款独立开发的 Chrome 扩展帮助你将有权保存的 Figma Design 源文件按团队归档到电脑。打开扩展时会读取当前 Figma 文件浏览器，勾选并开始导出后才会逐份处理原稿。</p>
+<h2>扩展会读取什么</h2><p>为识别当前账号、显示可选范围和匹配下载，扩展读取 Figma 页面中的账号显示名和标识、团队和项目名称与标识、文件标题、文件链接、缩略图、可用的修改时间，以及当前文件的保存菜单、验证和图片准备状态。Chrome 会向扩展分发下载事件。扩展在本机筛选文件名，对候选的 .fig 核对来源和当前队列，不匹配的下载交回浏览器正常处理。Figma 编辑器中的脚本会临时记录本页生成的 Blob 地址以核对来源，标签页销毁时释放。Chrome 管理 Figma 登录会话，扩展没有读取 Cookie 或密码的权限。</p>
+<h2>数据去哪里</h2><p>浏览器按正常网页流程与 Figma 通信。缩略图可能由 Figma 的图片域名（包括 figma.com 和 figmausercontent.com 子域）加载。可选的「读取团队目录」会把你主动填写的个人访问令牌通过 HTTPS 直接发给 <code>api.figma.com</code>，仅用于这次目录请求。令牌留在本次操作的内存中，扩展不会把它写进持久存储、清单或日志。</p>
+<p>本地归档和校验会读取所选源文件字节、浏览器下载状态及所授权的文件夹。源文件写入你选择的团队目录。扩展没有开发者后端、统计 SDK、广告或云备份服务，也不会把文件上传给开发者。主动导出的 CSV 含文件名称、链接、路径、处理结果和时间，由你决定是否分享。</p>
+<h2>本机保存什么，如何清理</h2><p>扩展在当前 Chrome 配置中保存团队目录索引、当前队列、文件标识、文件名、版本、下载记录标识、归档路径、大小、校验结果、时间、失败说明和历史批次，以便恢复和复核。已授权目录的句柄保存在 IndexedDB。标签页会话中暂存勾选项和界面状态。预览图在预览时读取，目录卡片的匹配标记可随队列保存。</p>
+<p>默认下载直接写入团队目录。自选目录先接收至下载目录下的「Figma-导出接收」，最终副本核对成功后清理本次临时文件。中断或校验失败可能留下接收副本供你处理。卸载扩展会清除该扩展在此 Chrome 配置中的数据；已经落盘的设计稿、接收副本和 CSV 由你自行移除，Chrome 下载历史由浏览器管理。可在 Chrome 网站设置撤销目录权限，个人访问令牌可在 Figma 设置撤销。</p>
+<h2>有限使用与联系</h2><p>上述数据仅用于本地批量导出、恢复和校验。我们遵守 Chrome 网上应用店用户数据政策的有限使用要求。我们不出售数据，不用它投放广告或评估信用，开发者无法从服务器查看你的设计稿。</p><p>本政策的公开版本托管于 GitHub Pages。打开公开网页时，GitHub 会出于安全目的记录访问者的 IP 地址。扩展内置的政策页面可离线查看。<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages 的数据处理说明</a></p><p>一般隐私问题可通过<a href="https://github.com/AYangZi/figma-team-export-privacy/issues/new">项目联系入口</a>公开提出。涉及个人资料时，请通过 Chrome 网上应用店详情页的开发者联系方式私下联系。</p></main></body></html>
